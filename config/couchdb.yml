@@ -1,0 +1,13 @@
+default: &default
+  validation_framework: :active_model # optional
+
+## Achtung! Vorsicht beim commiten! Nicht das die Passwörter publich auf github liegen!
+development:
+  <<: *default
+  database: http://user@password:@localhost:5984/yaws
+test:
+  <<: *default
+  database: test_db_name
+production:
+  <<: *default
+  database: http://user@password:@localhost:5984/yaws

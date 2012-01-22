@@ -16,3 +16,6 @@
 
 # Ignore Database Configuration
 /config/couchdb.yml
+
+# Eclipse
+.project

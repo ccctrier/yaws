@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    authorize! :manage, @users
+    #authorize! :manage, @users
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.0'
+gem 'rails', '3.2.1'
 
 # CouchDB OR-Mapping for Raisl, https://github.com/langalex/couch_potato
 gem 'couch_potato' 
@@ -15,23 +15,24 @@ gem 'typogruby'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+# gem 'sqlite3'
 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'less-rails'
+  gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'  
-  gem 'bootstrap-sass', '~> 1.4.4' # backend sugar!
+  gem 'twitter-bootstrap-rails', "~> 2.0.2" # backend sugar!
+  gem 'jquery-rails'
 end
 
-gem 'jquery-rails'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

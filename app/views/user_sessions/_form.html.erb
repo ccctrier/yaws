@@ -1,0 +1,29 @@
+<%= form_for(@user_session) do |f| %>
+  <% if @user_session.errors.any? %>
+  	<div class="alert alert-error">
+		<ul>
+      <% @user_session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+	</div>
+  <% end %>
+<span class="span7 offset2">
+<div id="login_mask" class="well">
+<div class="form-horizontal">
+  <legend>Login</legend>
+  <div class="control-group">
+    <label class="control-label" for="input01"><%= f.label :username %></label>
+    <div class="controls"><%= f.text_field :username, :id => "input01", :class => "input-xlarge" %></div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="input02"><%= f.label :password %></label>
+    <div class="controls"><%= f.password_field :password, :id => "input02", :class => "input-xlarge" %></div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit "Login", :class => "btn btn-primary" %>
+  </div>
+  </div>
+</div>
+</span>
+<% end %>

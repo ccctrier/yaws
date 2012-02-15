@@ -1,0 +1,27 @@
+<%= form_for @user do |f| %>
+<div class="well">
+<div class="form-horizontal">
+  <legend>User Profile</legend>
+  <div class="control-group">
+    <label class="control-label" for="input01"><%= f.label :username %></label>
+    <div class="controls"><%= f.text_field :username, :id => "input01", :class => "input-xlarge" %></div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="input02"><%= f.label :email %></label>
+    <div class="controls"><%= f.text_field :email, :id => "input02", :class => "input-xlarge" %></div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="input03"><%= f.label :password %></label>
+    <div class="controls"><%= f.password_field :password, :id => "input03", :class => "input-xlarge" %></div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="input04"><%= f.label :password_confirmation %></label>
+    <div class="controls"><%= f.password_field :password_confirmation, :id => "input04", :class => "input-xlarge" %></div>
+  </div>
+  
+  <div class="form-actions">
+  	<%= f.submit "Save Changes" , :class => "btn btn-primary" %>
+  </div>
+  </div>
+  </div>
+<% end %>

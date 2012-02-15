@@ -8,12 +8,12 @@ gem 'redcarpet'
 # For some fine Typomagic, https://github.com/avdgaag/typogruby
 gem 'typogruby'
 
+gem 'authlogic'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.

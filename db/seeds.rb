@@ -8,9 +8,16 @@
 
 public
 
-def create_user
-	User.delete_all
-	User.create(:username => "petra", :password => "ocksendorf", :password_confirmation => "ocksendorf", :email => "anfrage@c3t.de")
+def create_roles
+	Role.delete_all
+	Role.create(:name=>'admin', :description=>'Admin')
+	Role.create(:name=>'user', :description=>'User')
 end
 
-create_user
+def create_users
+	User.delete_all
+	User.create(:username => "petra", :password => "ocksendorf", :password_confirmation => "ocksendorf", :email => "petra@c3t.de")
+end
+
+create_roles
+#create_users

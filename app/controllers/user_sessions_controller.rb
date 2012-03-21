@@ -30,7 +30,7 @@ class UserSessionsController < ApplicationController
   # DELETE /user_sessions/1
   # DELETE /user_sessions/1.xml
   def destroy
-    if !@user_session.nil?
+    if !current_user.nil?
       @user_session = UserSession.find
       @user_session.destroy
   

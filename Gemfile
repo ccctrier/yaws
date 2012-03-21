@@ -8,8 +8,11 @@ gem 'redcarpet'
 # For some fine Typomagic, https://github.com/avdgaag/typogruby
 gem 'typogruby'
 
-# Authentication Stuff
+# A simple model based ruby authentication solution.
 gem 'authlogic'
+
+# Authorization Gem for Ruby on Rails.
+gem 'cancan'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -29,8 +32,6 @@ group :assets do
   gem 'twitter-bootstrap-rails', "~> 2.0.4" # backend sugar!
   gem 'jquery-rails'
 end
-
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

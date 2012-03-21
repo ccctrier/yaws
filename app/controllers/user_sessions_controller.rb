@@ -30,12 +30,16 @@ class UserSessionsController < ApplicationController
   # DELETE /user_sessions/1
   # DELETE /user_sessions/1.xml
   def destroy
-    @user_session = UserSession.find
-    @user_session.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(:urls, :notice => 'Goodbye!') }
-      format.xml  { head :ok }
+    if !@user_session.nil?
+      @user_session = UserSession.find
+      @user_session.destroy
+  
+      respond_to do |format|
+        format.html { redirect_to(:login, :notice => 'Goodbye!') }
+        format.xml  { head :ok }
+      end
+    else
+      redirect_to(:login)
     end
   end
   

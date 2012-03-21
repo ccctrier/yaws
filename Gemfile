@@ -8,6 +8,7 @@ gem 'redcarpet'
 # For some fine Typomagic, https://github.com/avdgaag/typogruby
 gem 'typogruby'
 
+# Authentication Stuff
 gem 'authlogic'
 
 # Bundle edge Rails instead:
@@ -25,7 +26,7 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'  
-  gem 'twitter-bootstrap-rails', "~> 2.0.2" # backend sugar!
+  gem 'twitter-bootstrap-rails', "~> 2.0.4" # backend sugar!
   gem 'jquery-rails'
 end
 

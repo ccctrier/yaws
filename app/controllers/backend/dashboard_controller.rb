@@ -1,4 +1,5 @@
 class Backend::DashboardController < ApplicationController
+  layout "backend/bootstrap"
   
   def index
     

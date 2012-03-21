@@ -18,7 +18,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       if @user_session.save
-        format.html { redirect_to("/", :notice => 'Login Successful') }
+        format.html { redirect_to(backend_root_path, :notice => 'Login Successful') }
         format.xml  { render :xml => @user_session, :status => :created, :location => @user_session }
       else
         format.html { render :action => "new" }

@@ -15,8 +15,7 @@
 /log/*.log
 /tmp
 
-# Ignore Database Configuration
-/config/couchdb.yml
+.DS_Store
 
 # Eclipse files
 .project

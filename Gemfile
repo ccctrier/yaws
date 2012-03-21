@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.2'
 
 # Markdown it! https://github.com/tanoku/redcarpet
 gem 'redcarpet'

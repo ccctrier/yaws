@@ -33,11 +33,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-		  <%= link_to "Yaws", backend_root_path, class: 'brand'  %>
+          <%= link_to "Yaws", :backend_root, :class => "brand" %>
           <div class="container nav-collapse">
             <ul class="nav">
-				<li><%= link_to "Dashboard", backend_root_path  %></li>
-                <li><%= link_to "Users", backend_users_path  %></li>
+                <% if current_user.isRole?("admin") %>
+                <li><%= link_to ('<i class="icon-user icon-white"></i> Users').html_safe, users_path  %></li>
+                <% end %>
+                <li><%= link_to ('<i class="icon-off icon-white"></i> Logout').html_safe, :logout  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

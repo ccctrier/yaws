@@ -38,7 +38,9 @@
           <%= link_to "Yaws", :backend_root, :class => "brand" %>
           <div class="container nav-collapse">
             <ul class="nav">
+                <% if current_user.isRole?("admin") %>
                 <li><%= link_to "Users", users_path  %></li>
+                <% end %>
                 <li><%= link_to "Logout", :logout  %></li>
             </ul>
           </div><!--/.nav-collapse -->

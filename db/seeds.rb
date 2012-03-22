@@ -16,7 +16,7 @@ end
 
 def create_users
 	User.delete_all
-	User.create(:username => "petra", :password => "ocksendorf", :password_confirmation => "ocksendorf", :email => "petra@c3t.de")
+	User.create(:username => "petra", :password => "ocksendorf", :password_confirmation => "ocksendorf", :email => "petra@c3t.de", :role => Role.where(:name => "admin").first.id)
 end
 
 create_roles

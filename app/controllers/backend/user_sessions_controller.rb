@@ -1,4 +1,5 @@
-class UserSessionsController < ApplicationController
+class Backend::UserSessionsController < ApplicationController
+  layout "backend/bootstrap"
   
   # GET /user_sessions/new
   # GET /user_sessions/new.xml

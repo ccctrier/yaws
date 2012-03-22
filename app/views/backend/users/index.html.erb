@@ -12,13 +12,13 @@
       <td><%= user.username %></td>
       <td><%= user.email %></td>
       <td></td>
-      <td><%= link_to 'Edit', edit_user_path(user.id), :class => "btn" %></td>
-      <td><%= link_to ("<i class=\"icon-trash icon-white\"></i>").html_safe, user, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %></td>
+      <td><%= link_to 'Edit', edit_backend_user_path(user.id), :class => "btn" %></td>
+      <td><%= link_to ("<i class=\"icon-trash icon-white\"></i>").html_safe, backend_user_path(user), confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %></td>
     </tr>
   <% end %>
 </table>
 
 <div class="form-actions">
-  <%= link_to "Add new User", new_user_path, :class => "btn btn-primary" %>
+  <%= link_to "Add new User", new_backend_user_path, :class => "btn btn-primary" %>
 </div>
 </div>

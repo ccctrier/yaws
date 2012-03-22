@@ -1,5 +1,6 @@
-class UsersController < ApplicationController
+class Backend::UsersController < ApplicationController
   protect_from_forgery
+  layout "backend/bootstrap"
 
   def index
     @users = User.all
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to users_url, :notice => "Successfully created user."
+      redirect_to backend_users_path, :notice => "Successfully created user."
     else
       render :action => 'new'
     end
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      redirect_to users_url, :notice  => "Successfully updated user."
+      redirect_to backend_users_url, :notice  => "Successfully updated user."
     else
       render :action => 'edit'
     end
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
     @User.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_tobackend_ users_url }
       format.json { head :no_content }
     end
   end

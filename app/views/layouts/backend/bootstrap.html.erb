@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Yaws</title>
@@ -34,10 +33,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Yaws</a>
+		  <%= link_to "Yaws", backend_root_path, class: 'brand'  %>
           <div class="container nav-collapse">
             <ul class="nav">
-                <li><%= link_to "Users", users_path  %></li>
+				<li><%= link_to "Dashboard", backend_root_path  %></li>
+                <li><%= link_to "Users", backend_users_path  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -47,12 +47,9 @@
     <div class="container">
       <div class="content">
         <div class="row">
-            <div class="span1">&nbsp;</div>
-              <div class="span3">
-                <%= render 'backend/shared/sidebar' %>
-              </div>
-            </div>
-			
+          <div class="span3">
+                <%= render 'backend/shared/sidebar' unless current_page?(controller: 'user_sessions', action: 'new') %>
+			</div>			
           <div class="span9">
             <%= yield %>
           </div>          

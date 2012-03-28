@@ -10,5 +10,5 @@ Yaws::Application.routes.draw do
     resources :user_sessions    
   end
 
-  root :to => 'users#index'
+  root :to => 'backend/user_sessions#new'
 end

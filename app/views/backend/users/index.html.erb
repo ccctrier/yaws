@@ -1,24 +1,28 @@
-<div class="well">
-<legend>Users</legend>
-<table class="table table-striped">
-  <tr>
-    <th>Username</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
+<div class="">
+	
+<div class="page-header">
+	<h2>Users
+		<%= link_to "Add new User", new_backend_user_path, :class => "btn btn-primary pull-right" %>
+	</h2>
+</div>
+
+<table class="table">
+  <thead>
+	  <tr>
+	    <th>Username</th>
+	    <th>Email</th>
+	    <th></th>
+	  </tr>
+  </thead>
+  <tbody>
   <% for user in @users %>
-    <tr>
+  <tr>
       <td><%= user.username %></td>
       <td><%= user.email %></td>
-      <td></td>
-      <td><%= link_to 'Edit', edit_backend_user_path(user.id), :class => "btn" %></td>
-      <td><%= link_to ("<i class=\"icon-trash icon-white\"></i>").html_safe, backend_user_path(user), confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %></td>
-    </tr>
+      <td><%= link_to 'Edit', edit_backend_user_path(user.id), :class => "btn" %>
+		  <%= link_to ("<i class=\"icon-trash icon-white\"></i>").html_safe, backend_user_path(user), confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %></td>
+  </tr>
+  </tbody>
   <% end %>
 </table>
-
-<div class="form-actions">
-  <%= link_to "Add new User", new_backend_user_path, :class => "btn btn-primary" %>
-</div>
 </div>

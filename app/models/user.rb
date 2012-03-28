@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_authentic
+  has_many :posts
   
   def isAdmin
     self.role == Role.where(:name => "admin").first.id

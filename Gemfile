@@ -19,6 +19,10 @@ gem 'cancan'
 
 gem 'sqlite3'
 
+# Backend Sugar!
+gem 'twitter-bootstrap-rails', "~> 2.0.4"
+gem 'font-awesome-rails' # http://fortawesome.github.com/Font-Awesome/
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -28,8 +32,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
-  gem 'uglifier', '>= 1.0.3'  
-  gem 'twitter-bootstrap-rails', "~> 2.0.4" # backend sugar!
+  gem 'uglifier', '>= 1.0.3'
   gem 'jquery-rails'
 end
 

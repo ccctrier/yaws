@@ -8,19 +8,17 @@
       </ul>
 	</div>
   <% end %>
-<span class="span7 offset2">
+<span class="span4 offset2">
 <div id="login_mask" class="well">
-<div class="form-horizontal">
+<div class="">
   <legend>Login</legend>
-  <div class="control-group">
-    <label class="control-label" for="input01"><%= f.label :username %></label>
-    <div class="controls"><%= f.text_field :username, :id => "input01", :class => "input-xlarge" %></div>
+  <div class="control-group">    
+    <div class="controls"><%= f.text_field :username, :id => "input01", :class => "span3", :placeholder => "Username" %></div>
   </div>
-  <div class="control-group">
-    <label class="control-label" for="input02"><%= f.label :password %></label>
-    <div class="controls"><%= f.password_field :password, :id => "input02", :class => "input-xlarge" %></div>
+  <div class="control-group">    
+    <div class="controls"><%= f.password_field :password, :id => "input02", :class => "span3", :placeholder => "Password" %></div>
   </div>
-  <div class="form-actions">
+  <div class="form">
     <%= f.submit "Login", :class => "btn btn-primary" %>
   </div>
   </div>

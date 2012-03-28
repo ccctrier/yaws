@@ -1,9 +1,18 @@
+require 'redcarpet'
+
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
   
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to :login
+  end
+  
+  def mdown2html(txt)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, 
+      :no_intra_emphasis => true, :autolink => true, :space_after_headers => true, :superscript =>true)
+    
+    markdown.render txt
   end
   
   private

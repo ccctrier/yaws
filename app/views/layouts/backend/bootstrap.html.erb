@@ -49,16 +49,6 @@
     <div class="container">
       <div class="content">
         <div class="row">
-        
-          <% [:notice, :error, :alert].each do |level| %>
-          <% unless flash[level].blank? %>
-           <div data-alert="alert" class="alert alert-<%= flash_class(level) %> fade in">
-              <a class="close" data-dismiss="alert" href="#">&times;</a>
-              <%= content_tag :span, flash[level] %>
-            </div>
-            <% end %>
-          <% end %>
-        
           <div class="span3">
             <%= render 'backend/shared/sidebar' if current_user %>
 			    </div>			

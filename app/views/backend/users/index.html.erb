@@ -6,12 +6,12 @@
 	</h2>
 </div>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
 	  <tr>
 	    <th>Username</th>
 	    <th>Email</th>
-	    <th></th>
+	    <th>Actions</th>
 	  </tr>
   </thead>
   <tbody>
@@ -19,8 +19,8 @@
   <tr>
       <td><%= user.username %></td>
       <td><%= user.email %></td>
-      <td><%= link_to 'Edit', edit_backend_user_path(user.id), :class => "btn" %>
-		  <%= link_to ("<i class=\"icon-trash icon-white\"></i>").html_safe, backend_user_path(user), confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %></td>
+      <td><%= link_to ("<i class=\"icon-edit\"></i>").html_safe, edit_backend_user_path(user.id), :class => "btn btn-mini" %>
+		  <%= link_to ("<i class=\"icon-trash icon-white\"></i>").html_safe, backend_user_path(user), confirm: 'Are you sure?', method: :delete, :class => "btn btn-mini btn-danger" %></td>
   </tr>
   </tbody>
   <% end %>

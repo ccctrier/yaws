@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.3'
 
 # Markdown it! https://github.com/tanoku/redcarpet
 gem 'redcarpet'
@@ -20,7 +20,7 @@ gem 'cancan'
 gem 'sqlite3'
 
 # Backend Sugar!
-gem 'twitter-bootstrap-rails', "~> 2.0.4"
+gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails' # http://fortawesome.github.com/Font-Awesome/
 
 # Gems used only for assets and not required
@@ -46,7 +46,7 @@ end
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'

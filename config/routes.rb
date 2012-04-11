@@ -1,5 +1,7 @@
 Yaws::Application.routes.draw do  
   
+  namespace :backend do resources :planets end
+
   match 'login' => 'backend/user_sessions#new', :as => :login
   match 'logout' => 'backend/user_sessions#destroy', :as => :logout
     

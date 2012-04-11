@@ -1,0 +1,34 @@
+<h1>Planets</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Url</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @planets.each do |planet| %>
+      <tr>
+        <td><%= planet.id %></td>
+        <td><%= link_to planet.url, backend_planet_path(planet) %></td>
+        <td><%= planet.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_backend_planet_path(planet), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', backend_planet_path(planet), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_backend_planet_path, :class => 'btn btn-primary' %>
+
+<hr />
+<h1>Test View</h1>
+<% for entry in @backend_planet_entries %>  
+  <h2><%= link_to h(entry.title), entry.url %></h2>
+  <h4><%= entry.published_at %></h4>
+  <h3><%= entry.summary.nil? ? "" : ((entry.summary).html_safe) %></h3>
+<% end %>

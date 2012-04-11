@@ -3,7 +3,12 @@ class Backend::UserSessionsController < ApplicationController
   
   # GET /user_sessions/new
   # GET /user_sessions/new.xml
-  def new
+  def new        
+    unless current_user.nil?
+      redirect_to backend_root_url
+      return
+    end
+    
     @user_session = UserSession.new
 
     respond_to do |format|

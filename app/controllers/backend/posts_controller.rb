@@ -14,9 +14,10 @@ class Backend::PostsController < ApplicationController
   
   def new 
     raise "No section specified!" if params[:section].nil?
+    raise "Wrong section specified!" unless ["news", "blog"].include? params[:section]
     
     @post = Post.new
-    @post.section = params[:section]
+    @post.section = params[:section]    
   end
   
   def create

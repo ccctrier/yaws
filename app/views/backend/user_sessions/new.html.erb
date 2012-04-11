@@ -1,7 +1,7 @@
 <%= form_for [:backend, @user_session] do |f| %>
   
 <span class="span7 offset2">
-<% if @user_session.errors.any? %>
+ <% if @user_session.errors.any? %>
   	<div class="alert alert-error">
 	  <% @user_session.errors.full_messages.each do |msg| %>
 		<a class="close" data-dismiss="alert" href="#">&times;</a>

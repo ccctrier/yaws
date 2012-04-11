@@ -1,0 +1,12 @@
+<h1>Backend/Planet</h1>
+
+<p>
+  <b>Url</b><br>
+  <%= @planet.url %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', backend_planets_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_backend_planet_path(@planet), :class => 'btn' %>
+  <%= link_to 'Delete', backend_planet_path(@planet), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

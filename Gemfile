@@ -50,3 +50,6 @@ gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+# A feed fetching and parsing library that treats the internet like Godzilla treats Japan
+gem 'feedzirra'

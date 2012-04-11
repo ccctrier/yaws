@@ -1,3 +1,6 @@
-
-<%= render 'form' %>
-
+<%= form_for [:backend, @user] do |f| %>
+<div class="form-horizontal">  
+  <legend>edit userprofile <strong><%= @user.username %></strong></legend>
+  <%= render 'form', :f => f %>
+</div>
+<% end %>

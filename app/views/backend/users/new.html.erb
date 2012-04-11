@@ -1,2 +1,8 @@
-<%= render 'form' %>
+<%= form_for [:backend, @user] do |f| %>
+<div class="form-horizontal">  
+  <legend>new User</legend>
+  <%= render 'form', :f => f %>
+</div>
+<% end %>
+
 

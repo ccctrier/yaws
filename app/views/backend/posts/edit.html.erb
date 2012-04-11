@@ -1,6 +1,6 @@
 <%= form_for [:backend, @post] do |f| %>
 <div class="form-horizontal">  
-  <legend>new Post</legend>
+  <legend>edit Post <%= @post.title %> </legend>
   <%= render 'form', :f => f %>
 </div>
 <% end %>

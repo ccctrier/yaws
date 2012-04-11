@@ -36,8 +36,11 @@
           </a>
           <%= link_to "Yaws", :backend_root, :class => "brand" %>
           <div class="container nav-collapse">
-            <ul class="nav">				
-                <li><%= link_to ('<i class="icon-user icon-white"></i> Users').html_safe, backend_users_path if current_user.isAdmin %></li>
+            <ul class="nav">
+				<% if current_user.isAdmin %>
+                <li><%= link_to ('<i class="icon-list-alt icon-white"></i> New Post').html_safe, new_backend_post_path(:section => 'news')  %></li>
+                <li><%= link_to ('<i class="icon-user icon-white"></i> Users').html_safe, backend_users_path %></li>
+				<% end %>
                 <li><%= link_to ('<i class="icon-off icon-white"></i> Logout').html_safe, :logout  %></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -49,17 +52,23 @@
     <div class="container">
       <div class="content">
         <div class="row">
+          <!--
           <div class="span3">
             <%= render 'backend/shared/sidebar' if current_user %>
-			    </div>			
+			    </div>
           <div class="span9">
+          -->
             <%= yield %>
-          </div>          
+          <!--
+          </div>
+          -->
         </div><!--/row-->
         <% if current_user %>
+        <!--
         <footer>
         	<p>&copy; CCC Trier 2012</p>
       	</footer>
+      	-->
       	<% end %>
       </div><!--/content-->
 

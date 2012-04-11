@@ -26,7 +26,7 @@ class Backend::PostsController < ApplicationController
   
   def update
     @post = Post.find(params[:id])
-    if @user.update_attributes(params[:post])
+    if @post.update_attributes(params[:post])
       redirect_to backend_posts_url, :notice  => "Successfully updated post."
     else
       render :action => 'edit'

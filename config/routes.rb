@@ -3,6 +3,7 @@ Yaws::Application.routes.draw do
   match 'login' => 'backend/user_sessions#new', :as => :login
   match 'logout' => 'backend/user_sessions#destroy', :as => :logout
   match 'rss' => 'posts#feed', :defaults => { :format => 'rss' }, :as => :rss
+  match 'atom' => 'posts#feed', :defaults => { :format => 'atom'}, :as => :atom
     resources :posts
   namespace :backend do
     root :to => 'dashboard#index'

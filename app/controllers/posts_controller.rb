@@ -6,6 +6,7 @@ def feed
 		respond_to do |format|
 			format.html
 			format.rss { render :layout => false } #index.rss.builder
+			format.atom { render :layout => false } # index.atom.builder
 		end
 end
 end

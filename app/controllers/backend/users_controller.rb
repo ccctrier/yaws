@@ -44,7 +44,7 @@ class Backend::UsersController < ApplicationController
     @User.destroy
 
     respond_to do |format|
-      format.html { redirect_tobackend_ users_url }
+      format.html { redirect_to backend_users_url }
       format.json { head :no_content }
     end
   end

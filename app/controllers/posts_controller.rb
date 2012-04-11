@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 def feed
 		raise "No section specified!" if params[:section].nil? 
-		@posts = Post.where(:published => true, :section => params[:section])
+		@posts = Post.where(:published => true, :section => params[:section]).reverse
 
 		respond_to do |format|
 			format.html

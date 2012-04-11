@@ -37,8 +37,10 @@
           <%= link_to "Yaws", :backend_root, :class => "brand" %>
           <div class="container nav-collapse">
             <ul class="nav">
-                <li><%= link_to ('<i class="icon-list-alt icon-white"></i> New Post').html_safe, new_backend_post_path if current_user.isAdmin %></li>
-                <li><%= link_to ('<i class="icon-user icon-white"></i> Users').html_safe, backend_users_path if current_user.isAdmin %></li>
+				<% if current_user.isAdmin %>
+                <li><%= link_to ('<i class="icon-list-alt icon-white"></i> New Post').html_safe, new_backend_post_path(:section => 'news')  %></li>
+                <li><%= link_to ('<i class="icon-user icon-white"></i> Users').html_safe, backend_users_path %></li>
+				<% end %>
                 <li><%= link_to ('<i class="icon-off icon-white"></i> Logout').html_safe, :logout  %></li>
             </ul>
           </div><!--/.nav-collapse -->

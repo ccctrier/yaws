@@ -1,12 +1,10 @@
 class Backend::UsersController < ApplicationController
   protect_from_forgery
+  load_and_authorize_resource
   layout "backend/bootstrap"
 
   def index
     @users = User.all
-
-    authorize! :manage, @users
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }

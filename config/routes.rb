@@ -6,7 +6,7 @@ Yaws::Application.routes.draw do
   namespace :backend do
     root :to => 'dashboard#index'
 
-    resources :users
+    resources :users, :posts
     resources :user_sessions    
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120411225730) do
+ActiveRecord::Schema.define(:version => 20120418195702) do
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -40,18 +40,21 @@ ActiveRecord::Schema.define(:version => 20120411225730) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.boolean  "published"
+    t.datetime "published_at"
   end
 
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "section"
     t.integer  "user_id"
     t.boolean  "published"
+    t.datetime "published_at"
   end
 
   create_table "roles", :force => true do |t|

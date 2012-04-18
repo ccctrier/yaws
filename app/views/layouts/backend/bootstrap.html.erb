@@ -38,7 +38,7 @@
           <div class="container nav-collapse">
             <ul class="nav">
 				<% if current_user.isAdmin %>
-                <li><%= link_to ('<i class="icon-list-alt icon-white"></i> New Post').html_safe, new_backend_post_path(:section => 'news')  %></li>
+                <li><%= link_to ('<i class="icon-list-alt icon-white"></i> News').html_safe, backend_posts_path(:section => 'news')  %></li>
                 <li><%= link_to ('<i class="icon-user icon-white"></i> Users').html_safe, backend_users_path %></li>
 				<% end %>
                 <li><%= link_to ('<i class="icon-off icon-white"></i> Logout').html_safe, :logout  %></li>

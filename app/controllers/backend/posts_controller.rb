@@ -3,10 +3,10 @@ class Backend::PostsController < ApplicationController
   load_and_authorize_resource
   layout "backend/bootstrap"
   
-  before_filter :check_section_param
+  before_filter :check_section_param, :except => [:update, :create]
   
   def index 
-    @posts = Post.where(:published => true, :section => params[:section])
+    @posts = Post.where(:section => params[:section])
     
     respond_to do |format|
       format.html
@@ -38,6 +38,7 @@ class Backend::PostsController < ApplicationController
   end
   
   def update
+    @post = Post.find(params[:id])    
     
     if @post.update_attributes(params[:post])
       redirect_to backend_posts_url, :notice  => "Successfully updated post."

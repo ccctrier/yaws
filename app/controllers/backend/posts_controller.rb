@@ -25,7 +25,6 @@ class Backend::PostsController < ApplicationController
   
   def create
     @post = Post.new(params[:post])    
-    @post.published_at = Time.now if @post.published & @post.published_at.nil?
     
     if @post.save
       redirect_to backend_posts_path(:section => @post.section), :notice => "Successfully created post."
@@ -39,8 +38,6 @@ class Backend::PostsController < ApplicationController
   end
   
   def update
-    @post = Post.find(params[:id])
-    @post.published_at = Time.now if @post.published & @post.published_at.nil?
     
     if @post.update_attributes(params[:post])
       redirect_to backend_posts_url, :notice  => "Successfully updated post."

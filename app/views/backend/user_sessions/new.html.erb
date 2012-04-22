@@ -1,28 +1,34 @@
 <%= form_for [:backend, @user_session] do |f| %>
-  
 <span class="span7 offset2">
- <% if @user_session.errors.any? %>
+<% if @user_session.errors.any? %>
   	<div class="alert alert-error">
 	  <% @user_session.errors.full_messages.each do |msg| %>
-		<a class="close" data-dismiss="alert" href="#">&times;</a>
-		<%= content_tag :span, msg %>
+	  <a class="close" data-dismiss="alert" href="#">&times;</a>
+	  <%= content_tag :span, msg %>
 	  <% end %>
 	</div>
   <% end %>
 
-<div id="login_mask" class="well">
-<div class="form-horizontal">
-  <legend>Login</legend>
-  <div class="control-group">    
-	<div class="controls"><%= f.text_field :username, :id => "input01", :class => "span3", :placeholder => "Username" %></div>
+  <div class="modal" id="myModal">
+	<div class="modal-header">
+  	<h3>Login</h3>
+	</div>
+	<div class="modal-body">
+		<br/>
+		<div class="form-horizontal">
+			<div class="control-group">
+		  		<label class="control-label" for="input01"><%= f.label :username %></label>
+		  		<div class="controls"><%= f.text_field :username, :id => "input01", :class => "input-xlarge" %></div>
+		  	</div>
+		  	<div class="control-group">
+		  		<label class="control-label" for="input02"><%= f.label :password %></label>
+		  		<div class="controls"><%= f.password_field :password, :id => "input02", :class => "input-xlarge" %></div>
+		  	</div>
+		  </div>
+		</div>
+	<div class="modal-footer">
+  		<%= f.submit "Login", :class => "btn btn-primary" %>
+	</div>
   </div>
-  <div class="control-group">    
-	<div class="controls"><%= f.password_field :password, :id => "input02", :class => "span3", :placeholder => "Password" %></div>
-  </div>
-  <div class="form-actions" style="background-color: transparent;">
-	<%= f.submit "Login", :class => "btn btn-primary" %>
-  </div>
-</div>
-</div>
 </span>
 <% end %>

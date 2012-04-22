@@ -32,7 +32,7 @@ GEM
     authlogic (3.1.0)
       activerecord (>= 3.0.7)
       activerecord (>= 3.0.7)
-    bootstrap-datepicker-rails (0.6.9)
+    bootstrap-datepicker-rails (0.6.10)
       railties (>= 3.0)
     builder (3.0.0)
     cancan (1.6.7)

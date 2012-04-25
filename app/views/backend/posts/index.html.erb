@@ -1,6 +1,29 @@
-<% @posts.each do |post| %>
-<div class="post">
-	<h2><%= post.title %></h2>
-	<%= post.content %>
-</div>
-<% end %>
+<legend>News
+<%= link_to 'new News', new_backend_post_path(:section => 'news'), :class => "btn btn-primary pull-right" %>	
+</legend>
+
+<table class="table table-striped">
+  <thead>
+	  <tr>
+		<th>Title</th>
+		<th>Section</th>
+		<th>Author</th>
+		<th>Date</th>
+		<th>Actions</th>
+	  </tr>
+  </thead>
+  <tbody>
+  <% for post in @posts %>
+  <tr>
+	  <td><%= post.title %></td>
+	  <td><%= post.section %></td>
+	  <td><%= User.where(:id => post.user_id).first.username %></td>
+	  <td><%= post.created_at.to_s %></td>
+	  <td>
+	  	<%= link_to ("<i class=\"icon-pencil\"></i>").html_safe, edit_backend_post_path(post.id), :class => "btn btn-mini" %>
+		<%= link_to ("<i class=\"icon-trash icon-white\"></i>").html_safe, backend_post_path(post), confirm: 'Are you sure?', method: :delete, :class => "btn btn-mini btn-danger" %>
+	  </td>
+  </tr>  
+  <% end %>
+  </tbody>
+</table>

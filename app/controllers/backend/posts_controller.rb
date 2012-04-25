@@ -3,9 +3,10 @@ class Backend::PostsController < ApplicationController
   load_and_authorize_resource
   layout "backend/bootstrap"
   
+  before_filter :check_section_param, :except => [:update, :create, :edit, :destroy]
+  
   def index 
-    raise "No section specified!" if params[:section].nil? 
-    @posts = Post.where(:published => true, :section => params[:section])
+    @posts = Post.where(:section => params[:section])
     
     respond_to do |format|
       format.html
@@ -13,17 +14,20 @@ class Backend::PostsController < ApplicationController
   end
   
   def new 
-    raise "No section specified!" if params[:section].nil?
-    raise "Wrong section specified!" unless ["news", "blog"].include? params[:section]
-    
     @post = Post.new
-    @post.section = params[:section]    
+    @post.section = params[:section]
+    
+    respond_to do |format|
+      format.html
+    end
   end
   
   def create
     @post = Post.new(params[:post])
+    @post.user_id = current_user.id
+    
     if @post.save
-      redirect_to backend_posts_path, :section => @post.section, :notice => "Successfully created post."
+      redirect_to backend_posts_path(:section => @post.section), :notice => "Successfully created post."
     else
       render :action => 'new'
     end
@@ -35,11 +39,28 @@ class Backend::PostsController < ApplicationController
   
   def update
     @post = Post.find(params[:id])
+
     if @post.update_attributes(params[:post])
-      redirect_to backend_posts_url, :notice  => "Successfully updated post."
+      redirect_to backend_posts_path(:section => @post.section), :notice  => "Successfully updated post."
     else
       render :action => 'edit'
     end
+  end
+
+  def destroy
+    @Post = Post.find(params[:id])
+    @Post.destroy
+  
+    respond_to do |format|
+      format.html { redirect_to backend_posts_path(:section => 'news') }
+      format.json { head :no_content }
+    end
+  end
+  
+  private
+  def check_section_param
+    raise "No section specified!" if params[:section].nil?
+    raise "Wrong section specified!" unless ["news", "blog"].include?(params[:section])
   end
   
 end

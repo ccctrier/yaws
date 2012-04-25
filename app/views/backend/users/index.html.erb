@@ -1,10 +1,6 @@
-<div class="">
-	
-<div class="page-header">
-	<h2>Users
-		<%= link_to "Add new User", new_backend_user_path, :class => "btn btn-primary pull-right" %>
-	</h2>
-</div>
+<legend>Users
+	<%= link_to "Add new User", new_backend_user_path, :class => "btn btn-primary pull-right" %>
+</legend>
 
 <table class="table table-striped">
   <thead>
@@ -20,11 +16,10 @@
       <td><%= user.username %></td>
       <td><%= user.email %></td>
       <td>
-      	<%= link_to ("<i class=\"icon-edit\"></i>").html_safe, edit_backend_user_path(user.id), :class => "btn btn-mini" %>
+      	<%= link_to ("<i class=\"icon-pencil\"></i>").html_safe, edit_backend_user_path(user.id), :class => "btn btn-mini" %>
 		<%= link_to ("<i class=\"icon-trash icon-white\"></i>").html_safe, backend_user_path(user), confirm: 'Are you sure?', method: :delete, :class => "btn btn-mini btn-danger" %>
 	  </td>
   </tr>  
   <% end %>
   </tbody>
 </table>
-</div>

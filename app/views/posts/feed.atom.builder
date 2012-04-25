@@ -6,10 +6,11 @@ atom_feed :language => 'de-DE' do |feed|
 	feed.entry post do |entry|
 	  entry.title post.title
 	  entry.content post.content, :type => 'html'
+	  entry.tag!('app:edited', Time.now)
 
-	  #entry.user_id do |user_id|
-		#user_id.name post.user_id
-	  #end
+	entry.author do |author|
+  		author.name("CCC Trier")
+	end
 	end
   end
 end

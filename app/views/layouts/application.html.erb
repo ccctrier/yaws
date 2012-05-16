@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <%= auto_discovery_link_tag(:rss, :controller => "Posts", :action => 'feed') %>
     <title>Yaws</title>
     <%= csrf_meta_tags %>
 

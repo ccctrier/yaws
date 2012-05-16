@@ -4,6 +4,7 @@ Yaws::Application.routes.draw do
 
   match 'login' => 'backend/user_sessions#new', :as => :login
   match 'logout' => 'backend/user_sessions#destroy', :as => :logout
+  match 'dashboard' => 'backend/dashboard#index', :as => :dashboard
     
   namespace :backend do
     root :to => 'dashboard#index'

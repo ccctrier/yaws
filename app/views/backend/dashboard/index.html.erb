@@ -1,0 +1,47 @@
+<div class="containter">
+	<div class="row">
+	
+		<div class="span6">
+			<h2>News</h2>
+			
+			<ul class="span4">
+			<% @news.each do |item| %>
+				<li>
+					 <h3><%= link_to item.title, edit_backend_post_path(item) %></h3>					
+				</li>
+			<% end %>
+			</ul>
+			
+		</div>
+		
+		<div class="span6">
+			<h2>Ausgehackt</h2>
+			<ul class="span4">
+			<% @blogposts.each do |item| %>
+				<li>
+					 <h3><%= link_to item.title, edit_backend_post_path(item) %></h3>					
+				</li>
+			<% end %>
+			</ul>
+		</div>
+		
+	</div>
+	
+	<div class="row">
+	
+		<div class="span6">
+	     	<h2>Termine</h2>
+	     	
+	     	<% @events.each do |item| %>
+	     		<li>
+	     			 <h3>		     			 
+	     			 	<%= link_to item.title, edit_backend_post_path(item) %>
+	     			 	<span><%= item.start_date %></span>
+	     			 </h3>					
+	     		</li>
+	     	<% end %>
+		</div>
+		
+	</div>	
+	
+</div>

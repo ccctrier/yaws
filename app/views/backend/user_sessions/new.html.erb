@@ -1,17 +1,18 @@
 <%= form_for [:backend, @user_session] do |f| %>
 <span class="span7 offset2">
-<% if @user_session.errors.any? %>
-  	<div class="alert alert-error">
-	  <% @user_session.errors.full_messages.each do |msg| %>
-	  <a class="close" data-dismiss="alert" href="#">&times;</a>
-	  <%= content_tag :span, msg %>
-	  <% end %>
-	</div>
-  <% end %>
 
   <div class="modal" id="myModal">
 	<div class="modal-header">
   	<h3>Login</h3>
+  	<% if @user_session.errors.any? %>
+  	  	<div class="alert alert-error">
+  		  <% @user_session.errors.full_messages.each do |msg| %>
+  		  <a class="close" data-dismiss="alert" href="#">&times;</a>
+  		  <%= content_tag :span, msg %>
+  		  <% end %>
+  		</div>
+  	  <% end %>
+
 	</div>
 	<div class="modal-body">
 		<br/>

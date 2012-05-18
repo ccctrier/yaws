@@ -59,8 +59,15 @@ class Backend::PostsController < ApplicationController
   
   private
   def check_section_param
+    @sections = Section.all
+    @sectionnames = Array.new
+
+    @sections.each do |section|
+      @sectionnames << section.name
+    end
+    
     raise "No section specified!" if params[:section].nil?
-    raise "Wrong section specified!" unless ["news", "blog"].include?(params[:section])
+    raise "Wrong section specified!" unless @sectionnames.include?(params[:section])
   end
-  
+
 end

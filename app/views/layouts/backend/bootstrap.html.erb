@@ -33,8 +33,10 @@
           <div class="container nav-collapse">
             <ul class="nav">
 			<% if current_user.isAdmin %>
-                <li><%= link_to ('<i class="icon-list-alt icon-white"></i> News').html_safe, backend_posts_path(:section => 'news') %></li>
-                <li><%= link_to ('<i class="icon-leaf icon-white"></i> Planet').html_safe, backend_planets_path %></li>
+			  <% for section in Section.all %>
+          <li><%= link_to ('<i class="icon-list-alt icon-white"></i> ' + section.name).html_safe, backend_posts_path(:section => section.name) %></li>      
+        <% end %>
+        <li><%= link_to ('<i class="icon-leaf icon-white"></i> Planet').html_safe, backend_planets_path %></li>
 			<% end %>
 			</ul>
 			<ul class="nav pull-right">

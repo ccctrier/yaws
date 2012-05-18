@@ -19,6 +19,13 @@ def create_users
 	User.create(:username => "petra", :password => "ocksendorf", :password_confirmation => "ocksendorf", :email => "petra@c3t.de", :role => Role.where(:name => "admin").first.id)
 end
 
+def create_sections
+	Section.delete_all
+	Section.create(:name=>'News')
+	Section.create(:name=>'Page')
+	Section.create(:name=>'Ausgehackt')
+end
+
 def create_planet_entries
 	Backend::Planet.delete_all
 	Backend::Planet.create(:url => "http://ausgehackt.c3t.de/rss")
@@ -31,6 +38,7 @@ def create_planet_entries
 	Backend::Planet.create(:url => "http://anykwhere.blogspot.com/feeds/posts/default")
 end
 
-create_roles
-create_users
+#create_roles
+#create_users
+create_sections
 create_planet_entries

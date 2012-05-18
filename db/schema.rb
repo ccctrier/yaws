@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120418195702) do
+ActiveRecord::Schema.define(:version => 20120425223855) do
+
+  create_table "Posts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.integer  "section",      :limit => 255
+    t.integer  "user_id"
+    t.boolean  "published"
+    t.datetime "published_at"
+  end
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -46,22 +57,17 @@ ActiveRecord::Schema.define(:version => 20120418195702) do
     t.datetime "published_at"
   end
 
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.string   "section"
-    t.integer  "user_id"
-    t.boolean  "published"
-    t.datetime "published_at"
-  end
-
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "sections", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "user_sessions", :force => true do |t|

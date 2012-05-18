@@ -63,7 +63,7 @@ class Backend::PostsController < ApplicationController
     @sectionnames = Array.new
 
     @sections.each do |section|
-      @sectionnames << section.name
+      @sectionnames << section.name.downcase
     end
     
     raise "No section specified!" if params[:section].nil?

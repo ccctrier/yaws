@@ -34,7 +34,7 @@
             <ul class="nav">
 			<% if current_user.isAdmin %>
 			  <% for section in Section.all %>
-          <li><%= link_to ('<i class="icon-list-alt icon-white"></i> ' + section.name).html_safe, backend_posts_path(:section => section.name) %></li>      
+          <li><%= link_to ('<i class="icon-list-alt icon-white"></i> ' + section.name).html_safe, backend_posts_path(:section => section.name.downcase) %></li>      
         <% end %>
         <li><%= link_to ('<i class="icon-leaf icon-white"></i> Planet').html_safe, backend_planets_path %></li>
 			<% end %>

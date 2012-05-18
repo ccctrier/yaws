@@ -8,7 +8,9 @@ class Post < ActiveRecord::Base
   private
   
     def set_publishing_date
-      self.published_at = Time.now if self.published & self.published_at.nil?
+      if self.published & self.published_at.nil?
+        self.published_at = Time.now
+      end
     end
   
 end

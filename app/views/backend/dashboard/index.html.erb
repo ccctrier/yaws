@@ -1,47 +1,62 @@
 <div class="containter">
 	<div class="row">
 	
-		<div class="span6">
-			<h2>News</h2>
+		<div class="offset1 span4 well well-small">
+			<div>
+				<h2>
+					News
+					<%= link_to "add", new_backend_post_path(:section => "news"), 
+						:class => "btn btn-primary btn-small pull-right" %>
+				</h2>
+			</div>
+
 			
-			<ul class="span4">
-			<% @news.each do |item| %>
-				<li>
-					 <h3><%= link_to item.title, edit_backend_post_path(item) %></h3>					
-				</li>
-			<% end %>
+			<ul>
+				<% @news.each do |item| %>
+				<li><h3><%= link_to item.title, edit_backend_post_path(item) %></h3></li>
+				<% end %>
 			</ul>
 			
 		</div>
 		
-		<div class="span6">
-			<h2>Ausgehackt</h2>
-			<ul class="span4">
-			<% @blogposts.each do |item| %>
-				<li>
-					 <h3><%= link_to item.title, edit_backend_post_path(item) %></h3>					
-				</li>
+		<div class="offset1 span4 well well-small">
+			<div>
+				<h2>
+					Termine
+					<%= link_to "add", new_backend_event_path(),
+						:class => "btn btn-primary btn-small pull-right" %>
+				</h2>
+			</div>
+			 	
+			<% @events.each do |item| %>
+			<li>
+				<h3>		     			 
+					<%= link_to item.title, edit_backend_post_path(item) %>
+					<span><%= item.start_date %></span>
+				</h3>					
+			</li>
 			<% end %>
-			</ul>
 		</div>
 		
 	</div>
 	
 	<div class="row">
-	
-		<div class="span6">
-	     	<h2>Termine</h2>
-	     	
-	     	<% @events.each do |item| %>
-	     		<li>
-	     			 <h3>		     			 
-	     			 	<%= link_to item.title, edit_backend_post_path(item) %>
-	     			 	<span><%= item.start_date %></span>
-	     			 </h3>					
-	     		</li>
-	     	<% end %>
-		</div>
-		
-	</div>	
-	
+		<div class="offset1 span4 well well-small">
+			<div>
+				<h2>
+					Ausgehackt
+					<%= link_to "add", new_backend_post_path(:section => "ausgehackt"), 
+						:class => "btn btn-primary btn-small pull-right" %>
+				</h2>
+			</div>
+
+			
+			<ul>
+				<% @blogposts.each do |item| %>
+				<li><h3><%= link_to item.title, edit_backend_post_path(item) %></h3></li>
+				<% end %>
+			</ul>
+			
+		</div>				
+	</div>
 </div>
